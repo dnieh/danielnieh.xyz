@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
-import test from "node:test";
 
 const myName = "Daniel Nieh";
 const greetings = [
@@ -43,23 +42,21 @@ const Home: NextPage = () => {
               </p>
             </div>
             <div className={styles.directory}>
-              <a
-                href="https://www.linkedin.com/in/daniel-nieh-90602a4b/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Work
-              </a>
-              <a className={styles.disabled}>Projects</a>
-              <a
-                href="https://github.com/dnieh"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Code
-              </a>
-              <a className={styles.disabled}>Blog</a>
-              <a className={styles.disabled}>Gallery</a>
+              <Link href="https://www.linkedin.com/in/daniel-nieh-90602a4b/">
+                <a>Work</a>
+              </Link>
+              <Link href="/projects">
+                <a>Projects</a>
+              </Link>
+              <Link href="https://github.com/dnieh">
+                <a>Code</a>
+              </Link>
+              <Link href="/blog">
+                <a>Blog</a>
+              </Link>
+              <Link href="/gallery">
+                <a>Gallery</a>
+              </Link>
             </div>
           </div>
         </div>
