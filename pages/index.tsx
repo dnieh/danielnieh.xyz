@@ -38,11 +38,16 @@ const Home: NextPage = () => {
               <a
                 href="https://www.linkedin.com/in/daniel-nieh-90602a4b/"
                 target="_blank"
+                rel="noreferrer"
               >
                 Work
               </a>
               <a className={styles.disabled}>Projects</a>
-              <a href="https://github.com/dnieh" target="_blank">
+              <a
+                href="https://github.com/dnieh"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Code
               </a>
               <a className={styles.disabled}>Blog</a>
