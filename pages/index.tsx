@@ -3,15 +3,23 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import test from "node:test";
 
-const greetings = ["👋", "🖖", "你好", "こんにちは"];
+const myName = "Daniel Nieh";
+const greetings = [
+  `Hi! I'm ${myName}.`,
+  `👋, I'm ${myName}.`,
+  `🖖, I'm ${myName}.`,
+  `你好.我是${myName}.`,
+  `こんにちは！わたしは${myName}です。よろしく お願いします。`,
+];
 
 const Home: NextPage = () => {
-  const [welcome, setWelcome] = useState<null | string>(null);
+  const [welcomeMessage, setWelcomeMessage] = useState<string>("");
 
   useEffect(() => {
     const random = Math.floor(Math.random() * greetings.length);
-    setWelcome(greetings[random]);
+    setWelcomeMessage(greetings[random]);
   }, []);
 
   return (
@@ -23,7 +31,7 @@ const Home: NextPage = () => {
       <div className={styles.container}>
         <div className={styles.landingCard}>
           <div className={styles.title}>
-            <h1>{welcome}, I'm Daniel Nieh.</h1>
+            <h1>{welcomeMessage}</h1>
           </div>
           <div className={styles.landingBody}>
             <div className={styles.intro}>
